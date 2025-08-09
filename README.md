@@ -17,6 +17,7 @@ The MCP server is set up to handle web search queries using the Tavily API. It i
 
 - Python 3.13 or higher
 - A valid Tavily API key
+- A valid OpenWeatherMap API key (free at https://openweathermap.org/api)
 
 ## ⚠️NOTE FOR WINDOWS:⚠️
 
@@ -46,9 +47,10 @@ After that, you can follow from Step 2. below!
    ```
 
 2. **Configure environment variables**:
-Copy the `.env.sample` to `.env` and add your Tavily API key:
+Copy the `.env.sample` to `.env` and add your API keys:
    ```
    TAVILY_API_KEY=your_api_key_here
+   OPENWEATHER_API_KEY=your_openweather_api_key_here
    ```
 
 3. 🏗️ **Add a new tool to your MCP Server** 🏗️
@@ -76,7 +78,11 @@ The server will start and listen for commands via standard input/output.
 
 ## Usage
 
-The server provides a `web_search` tool that can be used to search the web for information about a given query. This is achieved by calling the `web_search` function with the desired query string.
+The server provides several tools:
+
+- **`web_search`**: Search the web for information about a given query
+- **`roll_dice`**: Roll dice with the given notation
+- **`check_weather`**: Check the weather for a given location and get a recommendation
 
 ## Activities: 
 
